@@ -1,0 +1,66 @@
+#include<iostream>
+#include<string.h>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+	int t;
+	cin>>t;
+	for(int i=0;i<t;i++)
+	{
+		int n;
+		cin>>n;
+		cin.ignore();
+		string str="";
+		getline(cin, str);
+	//	cout<<"str:"<<str<<endl;
+		int len=str.length();
+	//	cout<<"len:"<<len<<endl;
+		int flag=1, f=0;
+		for(int j=0;j<len;j++)
+		{
+			if(str[j]>=97 && str[j]<=122)
+			{
+				//cout<<"J:"<<j<<endl;
+				flag=0;
+				int x=j, front=j;
+				while(str[x]!='#')
+				{
+					x++;
+					if(x==len)
+					break;
+				}
+				if(x!=len)
+				{
+					while(x!=len)
+					{
+						cout<<str[x++];
+					}
+					cout<<" ";
+				}
+				while(str[j]!='\0')
+				{
+					cout<<str[j++];
+					if(j==len)
+					cout<<" ";
+				}
+				while(front!=0)
+				{
+					cout<<str[f++];
+					front--;
+				}
+			}
+		}
+		if(flag==1)
+		{
+			int index=0;
+			//cout<<"len:"<<len<<endl;
+			while(index!=len)
+			cout<<str[index++];
+		}
+		cout<<endl;
+	}
+  return 0;
+}
