@@ -14,7 +14,8 @@ int main() {
 		for(int d=0;d<27;d++)
 		a[d]=0;
 		cin>>str;
-		for(int j=0;j<strlen(str);j++)
+		int len=strlen(str);
+		for(int j=0;j<len;j++)
 		{
 			int x=(str[j])-97;
 			a[x]+=1;
