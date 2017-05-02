@@ -1,0 +1,31 @@
+#include <iostream>
+#include<string>
+
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	for(int i=0;i<t;i++)
+	{
+		int n;
+		cin>>n;
+		cin.ignore();
+		string str, eng, word;
+		while(word[0]=='#')
+		{
+			getline(cin,word);
+			if(word[0]=='#')
+			str=str+' '+word;
+		}
+		if(word[0]>=97 && word[0]<=122)
+		{
+				eng=word;
+				while(getline(cin,word))
+				cout<<word;
+		}
+		cout<<eng<<" ";
+		cout<<str<<endl;
+	}
+	return 0;
+}
