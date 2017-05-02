@@ -9,7 +9,7 @@ int main() {
 	cin>>t;
 	for(int i=0;i<t;i++)
 	{
-		char str[100];
+		char str[120];
 		int a[27];
 		for(int d=0;d<27;d++)
 		a[d]=0;
