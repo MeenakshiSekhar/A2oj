@@ -1,0 +1,48 @@
+#include <iostream>
+#include<string.h>
+
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	for(int i=0;i<t;i++)
+	{
+		int n, flag=1;
+		cin>>n;
+		char word[15];
+		char string [1500];
+		strcpy(string, "");
+		while(n>0)
+		{
+			cin.ignore();
+			cin>>word;
+			if(word[0]=='#')
+			{
+				if(string[0]=='#')
+					strcat(string, " ");
+				strcat(string,word);
+			}
+			else if(word[0]>=97 && word[0]<=122)
+			{
+				char eng[15];
+				strcpy(eng,"");
+				strcpy(eng,word);
+				while(n>1)
+				{
+					flag=0;
+					cin>>word;
+					cout<<word;
+					cout<<" ";
+					n--;
+				}
+				cout<<eng;
+				cout<<" ";		
+				break;
+			}	
+			n--;
+		}
+		cout<<string<<endl;
+	}
+	return 0;
+}
