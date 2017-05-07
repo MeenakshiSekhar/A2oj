@@ -1,0 +1,68 @@
+#incorrect code
+
+#include <iostream>
+using namespace std;
+ 
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int r,c,k,l,i,j,flag=0, count=0;
+		cin>>r>>c;
+		int a[r][c];
+		for(i=0;i<r;i++)
+		{
+			for(j=0;j<c;j++)
+			cin>>a[i][j];
+		}
+		for(i=0;i<r;i++)
+		{
+			for(j=0;j<c;j++)
+			{
+				for(k=i-1;k<=i+1;k++)
+				{
+					if(k>=0 && k<=2)
+					{
+							for(l=j-1;l<=j+1;l++)
+							{
+							flag=0;
+ 
+							if( l>=0 && l<=2)
+							{
+								if(k==i && l==j)
+								{
+ 
+								}
+								else
+								{
+									if(a[i][j]==a[k][l] && a[i][j]!=-1)
+									{
+										a[k][l]=-1;
+										flag=1;
+									}
+								}
+							}
+						}
+						if(flag==1)
+						{
+							count++;
+							a[i][j]=-1;
+						}
+ 
+					}
+				}
+			}
+		}
+		cout<<count<<endl;
+		for(i=0;i<r;i++){
+		for(j=0;j<c;j++)
+		{
+			cout<<a[i][j]<<"\t";
+ 
+		}
+		cout<<endl;
+	}
+	}
+ 
+}
